@@ -9,7 +9,10 @@ export default {
             areas: data.areas
         }
 
-  const response = await fetch(`https://vue-http-main-project-c5b4f-default-rtdb.firebaseio.com/coaches/${userId}.json`, {
+        const token = context.rootGetters.token
+        
+
+  const response = await fetch(`https://vue-http-main-project-c5b4f-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=${token}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
